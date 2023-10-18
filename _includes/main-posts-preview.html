@@ -1,0 +1,11 @@
+<div class="recent-projects">
+    {% assign projects = site.categories['games'] | sort: 'date' | reverse | limit: 3 %}
+    {% for project in projects %}
+    <div class="project">
+        <img src="{{ project.image }}" alt="{{ project.title }}">
+        <h3>{{ project.title }}</h3>
+        <p><strong>Fecha:</strong> {{ project.date | date: "%d/%m/%Y" }}</p>
+        <p>{{ project.excerpt }}</p>
+    </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,18 @@
+<div class="post-preview">
+    <div class="post-info">
+        <a>
+            <h4 class="underline-grow">{{ include.title }}</h4>
+        </a>
+        <div class="post-meta">
+            <span class="post-date">{{ include.date | date: "%d de %B de %Y" }}</span>
+            <div class post-tags>
+                {{% for tag in include.tags %}}
+                <span class="post-tag">{{ tag }}</span>
+                {{% endfor %}}
+            </div>
+            <p>{{ include.desc }}</p>
+            <a href="{{include.link}}">Ver post completo</a>
+        </div>
+    </div>
+    <img src="{{ include.image }}" alt="Imagen representativa">
+</div>

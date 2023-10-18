@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<div class="home">
+    {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+    {%- endif -%}
+
+    <h2>Sobre mi</h2>
+
+    <h2> Mis proyectos</h2>
+    {%- include main-posts-preview.html -%}
+
+    <h2> Blog </h2>
+    {%- include main-blog-preview.html -%}
+
+    {{ content }}
+</div>

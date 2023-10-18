@@ -1,0 +1,13 @@
+<article class="blog-entry row">
+    <div class="col-12 col-md-2">
+        <p>{{ include.date | date: site.data.strings.date_format }}</p>
+    </div>
+    <div class="col-12 col-md-9 col-lg-7">
+        <a class="underline-grow">
+            <h3>{{ include.title | default: untitled}}</h3>
+        </a>
+        <p>
+            {{ include.desc | default: ---}}
+        </p>
+    </div>
+</article>
