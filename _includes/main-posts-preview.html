@@ -1,11 +1,22 @@
-<div class="recent-projects">
+<div class="row recent-projects">
     {% assign projects = site.categories['games'] | sort: 'date' | reverse | limit: 3 %}
     {% for project in projects %}
-    <div class="project">
-        <img src="{{ project.image }}" alt="{{ project.title }}">
-        <h3>{{ project.title }}</h3>
-        <p><strong>Fecha:</strong> {{ project.date | date: "%d/%m/%Y" }}</p>
-        <p>{{ project.excerpt }}</p>
+    <div class="col-12 col-md-6 project">
+        <a class="post-link un" href="{{ project.url}}">
+            <div class="row">
+                <div class="img-fitter">
+                    <img class="img-cover" src="{{ project.image }}" alt="{{ project.title }}">
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    {% for tag in project.tags %}
+                    <span class="uppercase light">{{tag}}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <h3>{{ project.title }}</h3>
+        </a>
     </div>
     {% endfor %}
 </div>

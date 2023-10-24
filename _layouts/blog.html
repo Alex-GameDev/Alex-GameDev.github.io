@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<section class="section section-blog">
+    <div class="container">
+        {% assign projects = site.categories['blog'] | sort: 'date' | reverse %}
+        {% for project in projects %}
+        <div class="row blog-preview">
+            <div class="col-12 col-md-2">
+                <p class="light">{{ project.date | date: "%d/%m/%Y" }}</p>
+            </div>
+            <div class="col-12 col-md-9 col-lg-7">                
+                <a class="post-link un" href="{{project.url}}">
+                    <span>
+                    <h2 class="post-title">{{ project.title }}</h2>
+                </span>
+                </a>
+                <p>{{ project.excerpt }}</p> 
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

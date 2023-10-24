@@ -1,13 +1,15 @@
-<div class="recent-entries">
+<div class="row recent-entries">
     {% assign projects = site.categories['blog'] | sort: 'date' | reverse | limit: 3 %}
     {% for project in projects %}
-    <div class="blog-preview">
-        <div class="blog-meta">
-            <p>{{ project.date | date: "%d/%m/%Y" }}</p>
+    <div class="row blog-preview">
+        <div class="col-12 col-md-2">
+            <p class="light">{{ project.date | date: "%d/%m/%Y" }}</p>
         </div>
-        <div class="blog-content">
-            <h3 class="post-title">{{ project.title }}</h3>
-            <p>{{ project.excerpt }}</p>
+        <div class="col-12 col-md-9 col-lg-7">
+            <a class="post-link un" href="{{project.url}}">
+                <h2 class="post-title">{{ project.title }}</h2>
+            </a>
+            <p>{{ project.excerpt }}</p> 
         </div>
     </div>
     {% endfor %}
