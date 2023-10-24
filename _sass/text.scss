@@ -1,0 +1,113 @@
+p {
+    font-size: .875rem;
+    padding: 0 0 1.333em;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, span {
+    color: var(--color-title); /* Cambiar el color de los enlaces a negro */
+    font-family: 'League Spartan', sans-serif;
+    line-height: 1.1;
+    margin: 0.8889em 0 0.6667em;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3.25rem;
+}
+
+.uppercase
+{
+    text-transform: uppercase;
+}
+
+.light
+{
+    color: var(--color-light);
+}
+
+.nav li a
+{
+    font-size: 0.8776rem;
+}
+
+.section-title
+{
+    text-transform: uppercase;
+    color: var(--color-light-title);
+    font-size: 1.2rem;
+    margin-bottom: 1.667rem;
+}
+
+a.un h2,
+a.un h3,
+a.un h4,
+a.un h5,
+a.un h6
+{
+    display: inline;
+    margin: 0.8776em 0;
+    content: "";
+    background-image: linear-gradient(var(--color-theme), var(--color-theme));
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 0.3s ease;
+}
+
+a.un:hover h2,
+a.un:hover h3,
+a.un:hover h4,
+a.un:hover h5,
+a.un:hover h6
+{
+    color: var(--color-theme);
+    background-size: 100% 2px;
+}
+
+
+.subtitle{
+    font-size: 2.75rem;
+    text-align: center;
+}
+
+@keyframes animateWords{
+    0%, 23% {
+      transform: translateY(0%);
+    }
+    
+    25%,48% {
+      transform: translateY(-125%);
+    }
+    
+    50%,73% {
+      transform: translateY(-250%);
+    }
+    
+    75%,98% {
+      transform: translateY(-375%);
+    }
+    
+    100% {
+      transform: translateY(-510%);
+    }
+}
+
+  
+.dynamic-span
+{
+    height: 1.5em;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    margin: 0;
+    > span{
+        
+        > span{
+            display: block;
+            text-align: center;
+            margin: 0.3em 0;
+            animation: animateWords 15.0s infinite ease;
+        }
+    }
+}

@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=League+Spartan:wght@700&family=Work+Sans:wght@300&display=swap');
+
+html{
+  font-size: 22px;
+  height: 100%;
+  margin: 0;
+}
+
+body{
+    background-color: var(--background);
+    display: flex;
+    height: 100%;
+    margin: 0;
+    flex-direction: column;
+    font-family: 'Work Sans', sans-serif;
+    //font-family: 'Lato', sans-serif;
+}
+
+// Header fixed
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 2em 0;
+}
+
+footer
+{
+    padding: 0.4444em 0 3.556em;
+}
+
+.page-content{
+    flex: 1;
+}
+
+section{
+    display: block;
+    padding: 3em 0;
+}
+
+.section:first-of-type, .first-section
+{
+    padding-top: 8em;
+}
+
+.section
+{
+    padding: 5em 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.img-cover
+{
+    width: 100%;
+    border-radius: 0.666em;
+    aspect-ratio: 16/9;
+    display: block;
+}
+
+.logo{
+    min-width: 50px;
+}
+
+.img-fitter
+{
+    margin: 0.8776rem 0;
+}
+
+.container-fluid
+{
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+}
+
+.recent-projects{
+    margin-bottom: 3rem;
+}
