@@ -5,11 +5,18 @@
 .card-thumbnail{
     flex: 0 0 300px;
     margin-right: 2rem;
-    >img{
+    border-radius: 10px;
+    overflow: hidden;
+    >a>img{
         width: 100%;
         height: auto;
         aspect-ratio: 16/9;
+        transition: transform 0.3s ease;
     }
+}
+
+.card-thumbnail>a>img:hover{
+    transform: scale(1.1);
 }
 
 .card-content{

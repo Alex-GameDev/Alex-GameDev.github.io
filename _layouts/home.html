@@ -38,7 +38,19 @@ layout: default
     <section>
         <div class="container">
             <h3 class="section-title">My projects</h3>
-            {%- include main-posts-preview.html -%}
+            <div class="row">
+                {% assign posts = site.categories['games'] | sort: 'date' | reverse | limit: 3 %}
+                {% for post in posts %}
+                <div class="col-12 col-md-6 project">
+                    {% include work-entry.html
+                        title=post.title
+                        summary=post.summary
+                        tags=post.tags
+                        thumbnail=post.image
+                    %} 
+                </div>
+                {% endfor %}
+            </div>
             <a class="link" href="/work">More projects</a>
         </div>
     </section>

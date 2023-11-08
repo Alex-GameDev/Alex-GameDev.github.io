@@ -3,7 +3,9 @@
     <div class="col-12 col-md-12 col-lg-10 mb-6">
         <div class="card-post d-flex">
             <div class="card-thumbnail">
-                <img alt={{include.title}} src={{include.thumbnail | default: site.default_thumbnail}}>
+                <a class="post-link un" href="{{include.url}}">
+                    <img alt={{include.title}} src={{include.thumbnail | default: site.default_thumbnail}}>
+                </a>
             </div>
             <div class="card-content">
                 <div class="card-meta">

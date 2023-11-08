@@ -1,11 +1,8 @@
 ---
 layout: post
-tags: unity webgl
 category: games
-itchio: "https://alex-game-dev.itch.io/party-island"
-game: "https://itch.io/embed/1678937"
 image: "/assets/img/partyisland.png"
-desc: Juego basado en minijuegos para dispositivos android.
+summary: Juego basado en minijuegos para dispositivos android.
 tags: [unity, android, game]
 ---
 

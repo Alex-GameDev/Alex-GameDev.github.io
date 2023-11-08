@@ -4,25 +4,17 @@ layout: default
 
 <section class="section section-blog">
     <div class="container">
-        <div class="row ">
-            {% assign projects = site.categories['games'] | sort: 'date' | reverse %}
-            {% for project in projects %}
+        <h1>My projects</h1>
+        <div class="mt-5 row">
+            {% assign posts = site.categories['games'] | sort: 'date' | reverse | limit: 3 %}
+            {% for post in posts %}
             <div class="col-12 col-md-6 project">
-                <a class="post-link un" href="{{ project.url}}">
-                    <div class="row">
-                        <div class="img-fitter">
-                            <img class="img-cover" src="{{ project.image }}" alt="{{ project.title }}">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div>
-                            {% for tag in project.tags %}
-                            <span class="uppercase light">{{tag}}</span>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    <h3>{{ project.title }}</h3>
-                </a>
+                {% include work-entry.html
+                    title=post.title
+                    summary=post.summary
+                    tags=post.tags
+                    thumbnail=post.image
+                %} 
             </div>
             {% endfor %}
         </div>
