@@ -1,0 +1,23 @@
+<!-- -->
+<article class="row">
+    <div class="col-12 col-md-12 col-lg-10 mb-6">
+        <div class="card-post d-flex">
+            <div class="card-thumbnail">
+                <img alt={{include.title}} src={{include.thumbnail | default: site.default_thumbnail}}>
+            </div>
+            <div class="card-content">
+                <div class="card-meta">
+                    <span class="light">{{ include.date | date: "%m-%d-%Y" }}</span>
+                </div>
+                <div class="card-title">
+                    <a class="post-link un" href="{{include.url}}">
+                        <h3>{{include.title | default: untitled}}</h3>
+                    </a>
+                </div>
+                <div class="card-description">
+                    <p>{{include.summary | default: ---}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

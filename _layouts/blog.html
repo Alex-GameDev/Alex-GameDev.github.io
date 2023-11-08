@@ -4,21 +4,18 @@ layout: default
 
 <section class="section section-blog">
     <div class="container">
-        {% assign projects = site.categories['blog'] | sort: 'date' | reverse %}
-        {% for project in projects %}
-        <div class="row blog-preview">
-            <div class="col-12 col-md-2">
-                <p class="light">{{ project.date | date: "%d/%m/%Y" }}</p>
-            </div>
-            <div class="col-12 col-md-9 col-lg-7">                
-                <a class="post-link un" href="{{project.url}}">
-                    <span>
-                    <h2 class="post-title">{{ project.title }}</h2>
-                </span>
-                </a>
-                <p>{{ project.excerpt }}</p> 
-            </div>
+        <h1>Blog</h1>
+        <div class="mt-5">
+            {% assign posts = site.categories['blog'] | sort: 'date' | reverse %}
+            {% for post in posts %}
+                {% include post-entry.html 
+                    title=post.title
+                    date=post.date
+                    summary=post.summary
+                    thumbnail=post.thumbnail
+                    url=post.url
+                %}   
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 </section>

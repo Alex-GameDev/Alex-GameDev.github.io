@@ -4,16 +4,57 @@ p {
     margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6, span {
-    color: var(--color-title); /* Cambiar el color de los enlaces a negro */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-heading); /* Cambiar el color de los enlaces a negro */
     font-family: 'League Spartan', sans-serif;
     line-height: 1.1;
-    margin: 0.8889em 0 0.6667em;
     font-weight: 700;
 }
 
 h1 {
     font-size: 3.25rem;
+}
+
+a {
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+a:hover {
+    color: var(--color-theme);
+    -webkit-text-decoration-color: var(--color-theme);
+    text-decoration-color: var(--color-theme);
+}
+
+.link {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 0.5em;
+    position: relative;
+    transition: color 0.3s, padding-right 0.3s;
+}
+
+.link::after {
+    background-color: var(--color-text);
+    width: 0.77em;
+    height: 0.77em;
+    display: inline-block;
+    content: '';
+    vertical-align: -5%;
+    -webkit-mask: url('../img/arrow.svg') no-repeat 50% 50%;
+    mask: url('../img/arrow.svg') no-repeat 50% 50%;
+    mask-size: cover;
+    -webkit-mask-position: right;
+    mask-position: right;
+    margin-left: 0.333em;
+    overflow: hidden;
+    transition: width .3s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.link:hover::after{
+    background-color: var(--color-theme);
+    width: 0.9em;
+    height: 0.77em;
 }
 
 .uppercase
@@ -23,7 +64,7 @@ h1 {
 
 .light
 {
-    color: var(--color-light);
+    color: var(--color-tags);
 }
 
 .nav li a
@@ -65,6 +106,10 @@ a.un:hover h6
     background-size: 100% 2px;
 }
 
+
+.header .nav li a:hover {
+    color: var(--color-theme);
+}
 
 .subtitle{
     font-size: 2.75rem;

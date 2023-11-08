@@ -4,47 +4,58 @@ layout: default
 
 <div class="home">
     <section class="first-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-4">
-                    <img src="/assets/img/icon.svg" class="img-fluid"/>
+        <div class="cover">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-3">
+                        <img src="/assets/img/icon.svg" class="img-fluid"/>
+                    </div>
                 </div>
-            </div>
-            <h1 class="title text-center">Alex Game Dev</h1>
-            <div class="subtitle">
-                <span class="text-center">
-                    <span class="dynamic-span text-nowrap">
-                        <span>
-                            <span>🎮Game🎮</span>
-                            <span>🔧Tool🔧</span>
-                            <span>🌐Web🌐</span>
-                            <span>📱App📱</span>
-                            <span>🎮Game🎮</span>
+                <h1 class="title text-center">Alex Game Dev</h1>
+                <div class="subtitle">
+                    <span class="text-center">
+                        <span class="dynamic-span text-nowrap">
+                            <span>
+                                <span>🎮Game🎮</span>
+                                <span>🔧Tool🔧</span>
+                                <span>🌐Web🌐</span>
+                                <span>📱App📱</span>
+                                <span>🎮Game🎮</span>
+                            </span>
                         </span>
-                    </span>
-                    <span>Developer</span>
-                </span> 
+                        <span>Developer</span>
+                    </span> 
+                </div>
             </div>
         </div>
     </section>
     <section>
         <div class="container">
             <h3 class="section-title">About me</h3>   
-            <a class="link-more" href="/about">Más sobre mi -></a>
+            <a class="link" href="/about">More about me</a>
         </div>
     </section>
     <section>
         <div class="container">
             <h3 class="section-title">My projects</h3>
             {%- include main-posts-preview.html -%}
-            <a class="link-more" href="/work">More projects -></a>
+            <a class="link" href="/work">More projects</a>
         </div>
     </section>
     <section>
         <div class="container">
             <h3 class="section-title">Blog</h3>
-            {%- include main-blog-preview.html -%}
-            <a class="link-more" href="/blog">More posts -></a>
+            {% assign posts = site.categories['blog'] | sort: 'date' | reverse | limit: 3 %}
+            {% for post in posts %}
+                {% include post-entry.html 
+                    title=post.title
+                    date=post.date
+                    summary=post.summary
+                    thumbnail=post.thumbnail
+                    url=post.url
+                %}   
+            {% endfor %}
+            <a class="link" href="/blog">More posts</a>
         </div>
     </section>
     {{ content }}

@@ -28,6 +28,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: alexgamedev2000
 github_username:  Alex-GameDev
 
+default_thumbnail: "/assets/img/tmb-jekyll-portfolio.jpg"
+
 plugins:
   - jekyll-feed
 
