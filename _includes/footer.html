@@ -1,14 +1,40 @@
 <footer class="site-footer">
     <data class="u-url" href="{{ '/' | relative_url }}"></data>
 
-    <div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="web-info">
+
+                </div>
+                <div class="social-links">
+                    <h3>{{site.title | default: Portfolio}}</h3>
+                    <p>{{site.description}}</p>
+                </div>
+            </div>
+        </div>
+
+
+
         <div class="col-12 justify-content-between">
             <div class="social">
-                <a class="social-link" href="https://twitter.com/alex_game_dev">Twitter</a>
-                <a class="social-link" href="https://www.linkedin.com/in/alejandro-orejudo/">LinkedIn</a>
+                {%- if site.twitter -%}
+                <a href="{{site.twitter}}">
+                    <i class="devicon-twitter-original"></i>
+                </a>
+                {%- endif -%}
+                {%- if site.github -%}
+                <a href="{{site.github}}">
+                    <i class="devicon-github-original"></i>
+                </a>
+                {%- endif -%}
+                {%- if site.linkedin -%}
+                <a href="{{site.linkedin}}">
+                    <i class="devicon-linkedin-plain"></i>
+                </a>
+                {%- endif -%}
             </div>
             <div class="feeds">
-                
             </div>
         </div>
 
