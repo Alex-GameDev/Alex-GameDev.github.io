@@ -1,20 +1,20 @@
 <article>
-    <div class="post-container mb-4">
-        <a class="post-link un" href="{{ include.url}}">
-            <div class="row">
-                <div class="img-fitter">
-                    <img class="img-cover" src="{{ include.thumbnail }}" alt="{{ include.title }}">
-                </div>
+    <div class="mb-4">
+        <div class="row my-4">
+            <a href="{{include.url}}">
+                <img class="img-16-9 d-block w-100 rounded-2" src="{{ include.thumbnail | default: site.default_thumbnail}}" alt="{{ include.title }}">
+            </a>
+        </div>
+        <div class="row">
+            <div>
+                {% for tag in include.tags %}
+                <span class="uppercase light">{{tag}}</span>
+                {% endfor %}
             </div>
-            <div class="row">
-                <div>
-                    {% for tag in include.tags %}
-                    <span class="uppercase light">{{tag}}</span>
-                    {% endfor %}
-                </div>
-            </div>
+        </div>
+        <a class="un" href="{{include.url}}">
             <h3>{{ include.title }}</h3>
-            <p>{{include.summary}}</p>
         </a>
+        <p>{{include.summary}}</p>
     </div>      
 </article>

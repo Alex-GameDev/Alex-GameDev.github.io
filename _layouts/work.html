@@ -6,7 +6,7 @@ layout: default
     <div class="container">
         <h1>My projects</h1>
         <div class="mt-5 row">
-            {% assign posts = site.categories['games'] | sort: 'date' | reverse | limit: 3 %}
+            {% assign posts = site.categories['games'] | sort: 'date' | reverse %}
             {% for post in posts %}
             <div class="col-12 col-md-6 project">
                 {% include work-entry.html
@@ -14,6 +14,7 @@ layout: default
                     summary=post.summary
                     tags=post.tags
                     thumbnail=post.image
+                    url=post.url
                 %} 
             </div>
             {% endfor %}
