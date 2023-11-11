@@ -1,13 +1,18 @@
 ---
 layout: default
 ---
-
 <section class="section">
     <div class="container">
         {{content}}
     </div>
 
-    <div class="container  mt-5">
+
+    <div class="container mt-5 mb-3">
+        <h2>Github recent activity</h2>
+        <img class="img-fluid w-100" src="https://ghchart.rshah.org/Alex-GameDev" alt="Name Your Github chart">    
+    </div>
+
+    <div class="container mt-5">
         <div class="row">
             <div class="col-12 col-md-3">
                 <h4>Education</h4>
@@ -52,3 +57,6 @@ layout: default
         </div>
     </div>
 </section>
+<script>
+    GitHubCalendar(".calendar", "your-username");
+</script>

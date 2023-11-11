@@ -27,7 +27,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter: https://twitter.com/alex_game_dev
 linkedin:  https://www.linkedin.com/in/alejandro-orejudo/
-github: https://github.com/Alex-GameDev
+github_user: Alex-GameDev
 
 default_thumbnail: "/assets/img/tmb-jekyll-portfolio.jpg"
 
